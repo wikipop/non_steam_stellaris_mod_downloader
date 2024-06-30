@@ -27,19 +27,24 @@ def modify_descriptor_file(descriptor_file_raw_data: str, mod_id: str):
     # split the data by new line
     data = descriptor_file_raw_data.split("\n")
 
-    data.insert(-2, f"path={paradox_mod_directory}\\{mod_id}")
+    for line in data:
+        if line.startswith("path"):
+            data.remove(line)
+            break
 
+    data.insert(-1, f"path=\"{paradox_mod_directory}/{mod_id}\"")
     new_file = "\n".join(data)
+    new_file = new_file.replace(os.sep, "/")
 
     return new_file
 
 
 def copy_mods():
-    if len(list_all(paradox_mod_directory)) != 0:
-        print("Mod directory is not empty")
-        print("Before copying the files, please make sure that the mod directory is empty")
-        os.system("explorer " + paradox_mod_directory)
-        exit()
+    # if len(list_all(paradox_mod_directory)) != 0:
+    #     print("Mod directory is not empty")
+    #     print("Before copying the files, please make sure that the mod directory is empty")
+    #     os.system("explorer " + paradox_mod_directory)
+    #     exit()
 
     source_mod_folders = list_all(steam_download_directory)
 
@@ -69,8 +74,8 @@ def copy_mods():
 
         # copy steam_mod_folder to new directory
 
-        output_mod_folder = pathlib.Path(paradox_mod_directory + "\\" + mod_id)
-        copy_tree(str(steam_mod_folder), str(output_mod_folder))
+        # output_mod_folder = pathlib.Path(paradox_mod_directory + "\\" + mod_id)
+        # copy_tree(str(steam_mod_folder), str(output_mod_folder))
 
 
 if __name__ == '__main__':
