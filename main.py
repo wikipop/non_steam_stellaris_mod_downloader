@@ -3,6 +3,7 @@ import pathlib
 import zipfile
 from distutils.dir_util import copy_tree
 
+
 # -> Path to the directory where the steam workshop content is downloaded
 steam_download_directory = os.path.abspath(r"C:\Users\wikipop\Downloads\steamapps\workshop\content\281990")
 
@@ -40,11 +41,11 @@ def modify_descriptor_file(descriptor_file_raw_data: str, mod_id: str):
 
 
 def copy_mods():
-    # if len(list_all(paradox_mod_directory)) != 0:
-    #     print("Mod directory is not empty")
-    #     print("Before copying the files, please make sure that the mod directory is empty")
-    #     os.system("explorer " + paradox_mod_directory)
-    #     exit()
+    if len(list_all(paradox_mod_directory)) != 0:
+        print("Mod directory is not empty")
+        print("Before copying the files, please make sure that the mod directory is empty")
+        os.system("explorer " + paradox_mod_directory)
+        exit()
 
     source_mod_folders = list_all(steam_download_directory)
 
@@ -74,8 +75,8 @@ def copy_mods():
 
         # copy steam_mod_folder to new directory
 
-        # output_mod_folder = pathlib.Path(paradox_mod_directory + "\\" + mod_id)
-        # copy_tree(str(steam_mod_folder), str(output_mod_folder))
+        output_mod_folder = pathlib.Path(paradox_mod_directory + "\\" + mod_id)
+        copy_tree(str(steam_mod_folder), str(output_mod_folder))
 
 
 if __name__ == '__main__':
