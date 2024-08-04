@@ -3,7 +3,6 @@ import pathlib
 import zipfile
 from distutils.dir_util import copy_tree
 
-
 # -> Path to the directory where the steam workshop content is downloaded
 steam_download_directory = os.path.abspath(r"C:\Users\wikipop\Downloads\steamapps\workshop\content\281990")
 
@@ -40,16 +39,15 @@ def modify_descriptor_file(descriptor_file_raw_data: str, mod_id: str):
     return new_file
 
 
-def copy_mods():
-    if len(list_all(paradox_mod_directory)) != 0:
-        print("Mod directory is not empty")
-        print("Before copying the files, please make sure that the mod directory is empty")
-        os.system("explorer " + paradox_mod_directory)
-        exit()
-
+def update_mods():
     source_mod_folders = list_all(steam_download_directory)
 
     for mod_id in source_mod_folders:
+
+        if (mod_id + ".mod") in list_files(paradox_mod_directory):
+            print(f"Mod {mod_id} already exists in paradox mod directory")
+            continue
+
         print("Copying " + mod_id)
         steam_mod_folder = pathlib.Path(steam_download_directory + "\\" + mod_id)
 
@@ -79,6 +77,16 @@ def copy_mods():
         copy_tree(str(steam_mod_folder), str(output_mod_folder))
 
 
+def update_n_clean():
+    if len(list_all(paradox_mod_directory)) != 0:
+        print("Mod directory is not empty")
+        print("Before copying the files, please make sure that the mod directory is empty")
+        os.system("explorer " + paradox_mod_directory)
+        exit()
+
+    update_mods()
+
+
 if __name__ == '__main__':
     print("What would you like to do?")
     print("1. Copy mods from steam workshop to paradox mod directory")
@@ -88,10 +96,10 @@ if __name__ == '__main__':
 
     match choice:
         case "1":
-            copy_mods()
+            update_n_clean()
         case "2":
             pass
-            # update_mods()
+            update_mods()
         case "3":
             exit()
         case _:

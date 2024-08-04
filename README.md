@@ -10,7 +10,7 @@ workshop_download_item 281990 123456789
 
 Edit `main.py` with the path to the steam and mods folder (line 7-11)
 
-*Warning: This script requires your stellaris mod folder to be empty before running but It will not delete any files on its own.*
+*Warning: This script may require your stellaris mod folder to be empty before running but It will not delete any files on its own.*
 
 ```python
 # -> Path to the directory where the steam workshop content is downloaded
