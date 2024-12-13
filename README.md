@@ -60,3 +60,7 @@ STEAM_DOWNLOAD_DIRECTORY = STEAM_TEMP_DIRECTORY + r"\steamapps\workshop\content\
 ```
 
 If you have any issues with the script, feel free to open an issue on the github page.
+
+## Acknowledgements
+
+This script is based on the work of [wmellema](https://github.com/wmellema) and his [Py-SteamCMD-Wrapper](https://github.com/wmellema/Py-SteamCMD-Wrapper) module.
