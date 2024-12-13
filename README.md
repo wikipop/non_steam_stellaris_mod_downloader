@@ -1,7 +1,7 @@
-# Upload steam stellaris mods to paradox launcher
+# Download steam mods to non steam Stellaris
 
 This script will help you with downloading mods to your non steam version of Stellaris.
-Script is configured to work  out of the box with stellaris, but you can easily modify it to work with other games (like hoi4).
+Script is configured to work out of the box with stellaris, but you can easily modify it to work with other games (like hoi4).
 
 ## Installation
 1. Download the script
@@ -49,7 +49,8 @@ If your stellaris mod directory is not located in the default location, you can 
 Lines 6-13 in `stellaris_steamcmd_mods_to_gog.py`:
 ```python
 # -> Path to the directory where the paradox mod directory is located
-PARADOX_MOD_DIRECTORY = os.path.abspath(str(pathlib.Path.home()) + r"\Documents\Paradox Interactive\Stellaris\mod")
+# PARADOX_MOD_DIRECTORY = os.path.abspath(str(pathlib.Path.home()) + r"\Documents\Paradox Interactive\Stellaris\mod")
+PARADOX_MOD_DIRECTORY = r"Your/Custom/Path"
 
 # -> Path to the directory where the steam workshop content will be downloaded
 STEAM_TEMP_DIRECTORY = os.path.abspath(str(pathlib.Path.home()) + r"\Downloads\stellaris_mod_temp")
