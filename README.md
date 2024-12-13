@@ -6,7 +6,7 @@ Script is configured to work out of the box with stellaris, but you can easily m
 ## Installation
 1. Download the script
 ```bash
-git clone https://github.com/wikipop/stellaris_steamcmd_mods_to_gog.git
+git clone https://github.com/wikipop/non_steam_stellaris_mod_downloader.git
 ```
 
 2. Install [Py-SteamCMD-Wrapper](https://github.com/wmellema/Py-SteamCMD-Wrapper) module
