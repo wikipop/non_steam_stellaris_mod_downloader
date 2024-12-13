@@ -1,0 +1,11 @@
+# Provide in this file the list of mod ids you want to download.
+# In order to get the id of a workshop mod, go to its workshop site, and look at the numbers after ?id of its URL, That's your mod's id.
+# So for https://steamcommunity.com/sharedfiles/filedetails/?id=1682700568, the ID would be 1682700568.
+# Your link can also look like https://steamcommunity.com/sharedfiles/filedetails/?id=2250100617&searchtext=Ultimate+Automation
+# In this case, the ID would be 2250100617.
+#
+# In next 3 lines you can see examples of how to write the mod ids in the file.
+# Delete them before adding your own mod ids.
+123456789
+987654321
+111111111
