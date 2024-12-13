@@ -19,7 +19,7 @@ pip install py-steamcmd-wrapper
 
 2. Run the script
 ```bash
-python stellaris_steamcmd_mods_to_gog.py
+python main.py
 ```
 
 3. First run 3rd option to download selected mods
